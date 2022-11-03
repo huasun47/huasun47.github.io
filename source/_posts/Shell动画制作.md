@@ -1,4 +1,6 @@
-# Shell 动画制作
+# Shell 命令行动画制作
+
+## By Nodejs
 
 1. 视频转图片
 
