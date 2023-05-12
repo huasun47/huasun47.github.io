@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>面试 - Typescript - Huasun47 Blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Huasun47 Blog"><meta name="msapplication-TileImage" content="/img/favicon.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Huasun47 Blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="一些关于 typescript 的面试题......"><meta property="og:type" content="blog"><meta property="og:title" content="面试 - Typescript"><meta property="og:url" content="http://example.com/2023/02/07/%E9%9D%A2%E8%AF%95/%E9%9D%A2%E8%AF%95%20-%20Typescript/"><meta property="og:site_name" content="Huasun47 Blog"><meta property="og:description" content="一些关于 typescript 的面试题......"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://www.notion.so/images/page-cover/solid_blue.png"><meta property="article:published_time" content="2023-02-06T16:00:00.000Z"><meta property="article:modified_time" content="2023-02-06T16:00:00.000Z"><meta property="article:author" content="Huasun47"><meta property="article:tag" content="Typescript"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://www.notion.so/images/page-cover/solid_blue.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/02/07/%E9%9D%A2%E8%AF%95/%E9%9D%A2%E8%AF%95%20-%20Typescript/"},"headline":"面试 - Typescript","image":["https://www.notion.so/images/page-cover/solid_blue.png"],"datePublished":"2023-02-06T16:00:00.000Z","dateModified":"2023-02-06T16:00:00.000Z","author":{"@type":"Person","name":"Huasun47"},"publisher":{"@type":"Organization","name":"Huasun47 Blog","logo":{"@type":"ImageObject","url":"http://example.com/img/logo.png"}},"description":"一些关于 typescript 的面试题......"}</script><link rel="canonical" href="http://example.com/2023/02/07/%E9%9D%A2%E8%AF%95/%E9%9D%A2%E8%AF%95%20-%20Typescript/"><link rel="icon" href="/img/favicon.png"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><script data-ad-client="1" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" async></script><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const $tabMenu = document.querySelector(`a[href="${location.hash}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(location.hash);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.png" alt="Huasun47 Blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">主页 🏠</a><a class="navbar-item" href="/archives">归档 📖</a><a class="navbar-item" href="/categories">分类 ⚛️</a><a class="navbar-item" href="/tags">标签 🏷️</a></div><div class="navbar-end"><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="https://www.notion.so/images/page-cover/solid_blue.png" alt="面试 - Typescript"></span></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-02-06T16:00:00.000Z" title="2023/2/7 00:00:00">2023-02-07</time>发表</span><span class="level-item"><time dateTime="2023-02-06T16:00:00.000Z" title="2023/2/7 00:00:00">2023-02-07</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E9%9D%A2%E8%AF%95/">面试</a></span><span class="level-item">13 分钟读完 (大约2005个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">面试 - Typescript</h1><div class="content"><ol>
+<li><p><strong>什么是 TypeScript？</strong></p>
+<ul>
+<li>一种 javascript 的超集，支持高级 js 语法，不能通过浏览器运行，需要编译器编译为 js</li>
+</ul>
+</li>
+<li><p><strong>为什么用 TypeScript？优势是什么？</strong></p>
+<ul>
+<li>对于开发人员更加友好，支持更高级语法。</li>
+<li>主要体现在 更少的出现值的类型错误，IDE 可以自动填充，更加智能</li>
+</ul>
+</li>
+<li><p><strong>TypeScript 中 const 和 readonly 的区别？枚举和常量枚举的区别？接口和类型别名的区别？</strong></p>
+<ul>
+<li>const 可以用于变量断言，比较方便将值变为只读内容，readonly 用于类型声明，通常用于对象上的某个属性</li>
+<li>枚举可支持的比较广泛，可完整支持内外部值计算，编译的结果是一个对象；常量枚举只能用它内部的值计算，编译的值是单个变量。常用的还是 普通枚举</li>
+<li>继承方式不同，interface 用 extend 关键字，type 用 &amp;(和号), interface 只能用来描述对象, 而且重名的 interface 会合并，type 不可以重名。type 还可以用于其他类型，如基本类型（原始值）、联合类型、元组。</li>
+</ul>
+</li>
+<li><p><strong>TypeScript 中 any 类型的作用是什么？</strong></p>
+<ul>
+<li>不清楚类型的一个值，值来源可能是动态的，失去了检查作用</li>
+</ul>
+</li>
+<li><p><strong>TypeScript 中 any、never、unknown、null &amp; undefined 和 void 有什么区别？</strong></p>
+<ul>
+<li>any: 动态的变量类型（失去了类型检查的作用）</li>
+<li>never: 是 TypeScript 中的底层类型，表示永远不存在的值的类型。例：一个从来不会有返回值的函数 或者 <code>let foo: never;</code> never 类型只能赋值给 never</li>
+<li>unknown: 任何类型的值都可以赋给 unknown 类型，但是 unknown 类型的值只能赋给 unknown 本身和 any 类型。</li>
+<li>null &amp; undefined: 默认情况下 null 和 undefined 是所有类型的子类型, 就是任何值都可以成为 null 或 undefined，但项目中一般开启 ts 开启–strictNullChecks 严格检查都只能赋值给自身类型</li>
+<li>void: 没有任何类型。函数没有一个返回值。 undefined 能赋值给 void</li>
+</ul>
+</li>
+<li><p><strong>TypeScript 中 interface 可以给 Function &#x2F; Array &#x2F; Class（Indexable）做声明吗？</strong></p>
+<ul>
+<li>可以</li>
+</ul>
+</li>
+<li><p><strong>TypeScript 中可以使用 String、Number、Boolean、Symbol、Object 等给类型做声明吗？</strong></p>
+<ul>
+<li>可以</li>
+</ul>
+</li>
+<li><p><strong>TypeScript 中的 this 和 JavaScript 中的 this 有什么差异？</strong></p>
+<ul>
+<li>TypeScript：noImplicitThis: true 的情况下，必须去声明 this 的类型，才能在函数或者对象中使用 this。</li>
+<li>Typescript 中箭头函数的 this 和 ES6 中箭头函数中的 this 是一致的。</li>
+</ul>
+</li>
+<li><p><strong>TypeScript 中使用 联合类型访问 时有哪些注意事项？</strong></p>
+<ul>
+<li>当 TypeScript 不确定一个联合类型的变量到底是哪个类型的时候，我们只能访问此联合类型的所有类型里共有的属性或方法</li>
+</ul>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">getLength</span>(<span class="params">something: <span class="built_in">string</span> | <span class="built_in">number</span></span>): <span class="built_in">number</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> something.<span class="property">length</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">getString</span>(<span class="params">something: <span class="built_in">string</span> | <span class="built_in">number</span></span>): <span class="built_in">string</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> something.<span class="title function_">toString</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>TypeScript 如何设计 Class 的声明？</strong></p>
+</li>
+</ol>
+<ul>
+<li>在声明类的时候，一般类中都会包含，构造函数、对构造函数中的属性进行类型声明、类中的方法。</li>
+</ul>
+<ol start="11">
+<li><strong>TypeScript 中如何联合枚举类型的 Key?</strong></li>
+</ol>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> str &#123;</span><br><span class="line">  A,</span><br><span class="line">  B,</span><br><span class="line">  C,</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">type</span> strUnion = keyof <span class="keyword">typeof</span> str; <span class="comment">// &#x27;A&#x27; | &#x27;B&#x27; | &#x27;C&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<ol start="12">
+<li><strong>keyof 和 typeof 关键字的作用？</strong></li>
+</ol>
+<ul>
+<li>keyof 获取类型上的 key 值, 可作用到基础数据类型</li>
+<li>typeof 获取一个变量或对象的类型。</li>
+</ul>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> prop&lt;T <span class="keyword">extends</span> <span class="built_in">object</span>, K <span class="keyword">extends</span> keyof T&gt;(<span class="attr">obj</span>: T, <span class="attr">key</span>: K) &#123;</span><br><span class="line">  <span class="keyword">return</span> obj[key];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="13">
+<li><strong>TypeScript 中 ?.、??、!、!.、_、** 等符号的含义？</strong></li>
+</ol>
+<ul>
+<li>?. 可选链: 遇到 null 和 undefined 可以立即停止表达式的运行。</li>
+<li>?? 空值合并运算符: 当左侧操作数为 null 或 undefined 时，其返回右侧的操作数，否则返回左侧的操作数。可以把它看作 || ，只是不包含 0</li>
+<li>! 非空断言运算符: x! 将从 x 值域中排除 null 和 undefined。就是将该变量内的 null 和 undefined 剔除，使其可以赋值 例：<code>x!.toFixed(2)</code> 排除了 x 是 null 和 undefined 的情况去使用方法</li>
+<li>!. 在变量名后添加，可以断言排除 undefined 和 null 类型</li>
+<li>_ 数字分割符： 分隔符不会改变数值字面量的值，使人更容易读懂数字 例：1_101_324</li>
+<li>** 求幂</li>
+<li>逻辑运算符: ||&#x3D; , &amp;&amp;&#x3D; , ??&#x3D;</li>
+</ul>
+<ol start="14">
+<li><strong>简单介绍一下 TypeScript 模块的加载机制？</strong></li>
+</ol>
+<ul>
+<li>首先，编译器会尝试定位需要导入的模块文件，通过绝对或者相对的路径查找方式</li>
+<li>如果没有查找到对应的模块，编译器会尝试定位一个外部模块声明（.d.ts）</li>
+<li>如果还没找到就报错</li>
+</ul>
+<ol start="15">
+<li><strong>TypeScript 中对象展开会有什么副作用吗？</strong></li>
+</ol>
+<ul>
+<li>展开对象后面的属性会覆盖前面的属性；</li>
+<li>仅包含对象自身的可枚举属性，不可枚举的属性将会丢失。</li>
+</ul>
+<ol start="16">
+<li><strong>类型的全局声明和局部声明?</strong></li>
+</ol>
+<ul>
+<li>查看文件是否包含 import、export，不包含就是全局声明</li>
+</ul>
+<ol start="17">
+<li><strong>TypeScript 中同名的 interface 或者同名的 interface 和 class 可以合并吗？</strong></li>
+</ol>
+<ul>
+<li>同名的 interface 会自动合并，class 会自动使用同名的 interface</li>
+</ul>
+<ol start="18">
+<li><strong>如何使 TypeScript 项目引入并识别编译为 JavaScript 的 npm 库包？</strong></li>
+</ol>
+<ul>
+<li>选择安装 ts 版本，npm install @types&#x2F;包名 –save；</li>
+<li>对于没有类型的 js 库，需要编写同名的.d.ts 文件</li>
+</ul>
+<ol start="19">
+<li><strong>TypeScript 的 tsconfig.json 中有哪些配置项信息？</strong></li>
+</ol>
+<ul>
+<li>files 是一个数组列表，用来指定待编译文件，在编译的时候只会编译包含在 files 中列出的文件。、</li>
+<li>include &amp; exclude 指定编译某些文件，或者指定排除某些文件。</li>
+<li>compileOnSave：true 让 IDE 在保存文件的时候根据 tsconfig.json 重新生成文件。</li>
+<li>extends 可以通过指定一个其他的 tsconfig.json 文件路径，来继承这个配置文件里的配置。</li>
+<li>compilerOptions 编译配置项，如何对具体的 ts 文件进行编译</li>
+</ul>
+<ol start="20">
+<li><strong>TypeScript 中如何设置模块导入的路径别名？</strong></li>
+</ol>
+<ul>
+<li>通过 tsconfig.json 中的 compilerOptions.paths 项来配置</li>
+</ul>
+<ol start="21">
+<li><strong>declare，declare global 是什么？</strong></li>
+</ol>
+<ul>
+<li>declare 是用来定义全局变量、全局函数、全局命名空间、全局模块、class 等</li>
+<li>declare global 为全局对象 window 增加新的属性</li>
+</ul>
+<ol start="22">
+<li><strong>对 TypeScript 类中成员的 public、private、protected、readonly 修饰符的理解？</strong></li>
+</ol>
+<ul>
+<li>public: 成员都默认为 public，被此限定符修饰的成员是可以被外部访问；</li>
+<li>private: 被此限定符修饰的成员是只可以被类的内部访问；</li>
+<li>protected: 被此限定符修饰的成员是只可以被类的内部以及类的子类访问;</li>
+<li>readonly: 关键字将属性设置为只读的。 只读属性必须在声明时或构造函数里被初始化。</li>
+</ul>
+<ol start="23">
+<li><strong>简述工具类型 Exclude、Omit、Merge、Intersection、Overwrite 的作用。</strong></li>
+</ol>
+<ul>
+<li>Exclude&lt;T, U&gt; 从 T 中排除出可分配给 U 的元素。</li>
+<li>Omit&lt;T, K&gt; 的作用是忽略 T 中的某些属性。</li>
+<li>Merge&lt;O1, O2&gt; 是将两个对象的属性合并。</li>
+<li>Compute&lt;A &amp; B&gt; 是将交叉类型合并</li>
+<li>Intersection&lt;T, U&gt;的作用是取 T 的属性,此属性同样也存在与 U</li>
+<li>Overwrite&lt;T, U&gt; 是用 U 的属性覆盖 T 的相同属性。</li>
+<li>Patrial&lt; T &gt; 转化为非必选类型。</li>
+</ul>
+<ol start="24">
+<li><strong>泛型的使用场景？</strong></li>
+</ol>
+<ul>
+<li>书写上：泛型实际上就是 大写字母开头的 一个 单词或字母，需要写入尖括号内作为一个类型传入</li>
+<li>意义上：通常代表一种不确定的类型，可以理解为类型相当于值，传入了 Interface, Class 或 Function 中。经常与 extend 搭配使用，代表某些类型的子类表达与<br>比如 <code>&lt;T extend unknown &gt;</code> 那么 T 就可以是 number, string 或其他可以赋值给 unknown 的类型</li>
+</ul>
+</div><div class="article-licensing box"><div class="licensing-title"><p>面试 - Typescript</p><p><a href="http://example.com/2023/02/07/面试/面试 - Typescript/">http://example.com/2023/02/07/面试/面试 - Typescript/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>Huasun47</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2023-02-07</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2023-02-07</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/Typescript/">Typescript</a></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css"><div class="social-share"></div><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="/img/alipay_qr.jpg" alt="支付宝"></span></a><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="/img/wechat_qr.png" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2023/02/23/%E6%95%99%E7%A8%8B/%E6%96%B0%E6%89%8B%E5%8F%91%E5%B8%83%E5%9C%9F%E7%8B%97%E5%B8%81/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">教新手发布土狗币</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2022/09/18/%E6%95%99%E7%A8%8B/MIDI%20Clef%20%E8%BD%AF%E4%BB%B6%20%E5%88%B6%E4%BD%9C8bit%E6%9B%B2%E9%A3%8E/"><span class="level-item">MIDI Clef 软件 制作8bit曲风</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><!--!--></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1 is-sticky"><!--!--><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-05-09T16:00:00.000Z">2023-05-10</time></p><p class="title"><a href="/2023/05/10/%E6%95%99%E7%A8%8B/%E4%B8%8A%E5%8F%A4%E6%96%87%E4%BB%B6mkf%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96/">上古文件 .mkf 读取，理解 Dataview，TypeArray</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-04-09T16:00:00.000Z">2023-04-10</time></p><p class="title"><a href="/2023/04/10/%E6%95%99%E7%A8%8B/%E4%BB%99%E5%89%91%E5%A5%87%E4%BE%A0%E4%BC%A0(%E4%B8%80)/">js 复刻《仙剑奇侠传》（一）</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-04-03T16:00:00.000Z">2023-04-04</time></p><p class="title"><a href="/2023/04/04/%E6%95%99%E7%A8%8B/%E4%BB%99%E5%89%91%E5%A5%87%E4%BE%A0%E4%BC%A0(%E5%89%8D%E8%A8%80)/">js 复刻《仙剑奇侠传》（前言）</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-03-03T16:00:00.000Z">2023-03-04</time></p><p class="title"><a href="/2023/03/04/%E6%95%99%E7%A8%8B/%E8%8D%92%E5%94%90%E7%9A%84NFT-%E8%B0%83%E7%94%A8%E5%90%88%E7%BA%A6/">荒唐的NFT（三） - 前端调用合约</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-03-02T16:00:00.000Z">2023-03-03</time></p><p class="title"><a href="/2023/03/03/%E6%95%99%E7%A8%8B/%E8%8D%92%E5%94%90%E7%9A%84NFT-%E5%90%88%E7%BA%A6%E8%A7%A3%E6%9E%90/">荒唐的NFT（二） - Solidity 写合约</a></p></div></article></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Nodejs/"><span class="tag">Nodejs</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Typescript/"><span class="tag">Typescript</span><span class="tag">1</span></a></div></div></div></div></div><div class="card widget" data-type="adsense"><div class="card-content"><div class="menu"><h3 class="menu-label">广告</h3><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="1" data-ad-slot="1" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.png" alt="Huasun47 Blog" height="28"></a><p class="is-size-7"><span>&copy; 2023 Huasun47</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
